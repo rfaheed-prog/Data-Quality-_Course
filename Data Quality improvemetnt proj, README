@@ -1,0 +1,950 @@
+# DATA QUALITY IMPROVEMENT PROJECT
+
+**Enhancing Customer and Booking Data Quality in a Saudi Tourism Company**
+
+**A Practical Case Study Aligned with SDAIA's National Data Management Standards**
+
+**Prepared by:** Faheed AlQaladi  
+**Course:** Data Quality Management  
+**Submission Date:** 18/11/2026  
+**Project Duration:** Six Months  
+**Industry:** Tourism and Hospitality  
+**Project Type:** Applied Data Quality Management Case Study  
+> **Training case study:** All company information, baseline measurements, financial assumptions, and project outcomes are hypothetical.
+
+## 1. Executive Summary
+
+Data quality is a critical success factor for tourism companies, where reliable customer information, accurate booking records, and consistent financial data directly influence operational efficiency, customer satisfaction, and business decision-making.
+
+This project presents a hypothetical six-month Data Quality Improvement Program for a Saudi tourism company experiencing challenges related to incomplete customer records, duplicate profiles, inconsistent booking information, inaccurate pricing, and delayed data updates.
+
+The project applies six fundamental data quality dimensions referenced in the Saudi Data and Artificial Intelligence Authority (SDAIA) National Data Management Standards:
+
+1. Completeness
+2. Accuracy
+3. Consistency
+4. Timeliness
+5. Uniqueness
+6. Validity
+
+The project establishes a structured methodology for assessing, measuring, improving, and continuously monitoring data quality.
+
+It also introduces governance responsibilities, measurable data quality rules, root cause analysis, corrective actions, preventive controls, and performance dashboards.
+
+**Illustrative project outcomes include:**
+
+- Improving data completeness from 78% to 99%.
+- Improving data accuracy from 82% to 97%.
+- Improving data consistency from 72% to 96%.
+- Reducing duplicate customer records from 11% to 1.5%.
+- Reducing booking-related manual corrections by 70%.
+- Establishing a sustainable Data Quality Monitoring Framework.
+Case Study Disclaimer: All company information, baseline measurements, financial assumptions, and project outcomes are hypothetical and developed exclusively for training purposes.
+
+## 2. Introduction
+
+### 2.1. Background
+
+The tourism industry relies heavily on data generated from multiple business activities,
+
+**including:**
+
+- Customer registration and relationship management.
+- Hotel and accommodation reservations.
+- Travel packages and tourism activities.
+- Transportation and flight bookings.
+- Payment and financial transactions.
+- Customer service and feedback.
+- Business intelligence and management reporting.
+These activities generate large volumes of operational data across multiple systems.
+
+When data is incomplete, inaccurate, duplicated, or inconsistent, organizations may experience booking errors, financial reconciliation issues, inefficient processes, and unreliable reporting.
+
+Therefore, improving data quality is not only a technical initiative but also a strategic business requirement.
+
+### 2.2. Company Profile
+
+For this project, a hypothetical Saudi tourism company named Saudi Horizons Tourism Company is used.
+
+The company provides domestic and international tourism services, including hotel reservations, travel packages, guided tours, and transportation arrangements.
+
+The company operates through multiple channels, including a website, mobile application, customer service center, and travel agents.
+
+**Its main information systems include:**
+
+- Customer Relationship Management (CRM).
+- Booking Management System (BMS).
+- Enterprise Resource Planning (ERP).
+- Payment Management System.
+- Business Intelligence Platform.
+The company maintains approximately 200,000 customer records and processes thousands of bookings each month.
+
+## 3. Problem Statement
+
+An initial data quality assessment identified several problems affecting operational performance.
+
+### 3.1. Identified Data Quality Issues
+
+Incomplete Data
+
+Some booking records were missing essential information, such as customer contact details, departure dates, and booking references.
+
+Duplicate Customer Records
+
+Customers were registered multiple times because of inconsistent naming conventions, phone number formats, and the absence of duplicate detection controls.
+
+Inaccurate Data
+
+Some booking prices did not match approved pricing records, resulting in manual verification and correction.
+
+Inconsistent Data
+
+Booking statuses and payment information differed between the Booking Management System and the ERP system.
+
+Outdated Data
+
+Cancelled or modified reservations were not consistently updated across all relevant systems within the required timeframe.
+
+Invalid Data
+
+Some records contained incorrect date formats, invalid destination codes, and values that violated established business rules.
+
+### 3.2. Baseline Data Quality Assessment
+
+| Data Quality Dimension | Baseline |
+|---|---:|
+| Completeness | 78% |
+| Accuracy | 82% |
+| Consistency | 72% |
+| Timeliness | 75% |
+| Uniqueness | 89% |
+| Validity | 86% |
+
+The uniqueness baseline represents the percentage of records assessed as non-duplicated under the project’s matching rules. The assessment also identified an estimated 11% duplicate customer record rate.
+
+These findings demonstrated the need for a structured data quality improvement initiative.
+
+## 4. Project Objectives
+
+### 4.1. Main Objective
+
+To improve the reliability, accuracy, completeness, consistency, and usability of critical business data through the implementation of a sustainable Data Quality Management Framework aligned with SDAIA's National Data Management Standards.
+
+### 4.2. Specific Objectives
+
+1. Assess the current quality of customer, booking, and financial data.
+
+2. Identify Critical Data Elements (CDEs).
+
+3. Establish measurable data quality rules and thresholds.
+
+4. Assign data ownership and stewardship responsibilities.
+
+5. Correct historical data quality issues.
+
+6. Implement automated preventive and detective controls.
+
+7. Reduce duplicate customer records.
+
+8. Improve consistency between integrated systems.
+
+9. Establish continuous data quality monitoring.
+
+10. Improve operational efficiency and management reporting reliability.
+
+### 4.3. SMART Targets
+
+| Objective | Target | Deadline |
+|---|---:|---|
+| Improve completeness | ≥99% | Month 6 |
+| Improve accuracy | ≥98% | Month 6 |
+| Improve consistency | ≥98% | Month 6 |
+| Improve timeliness | ≥95% | Month 6 |
+| Improve uniqueness | ≥98% | Month 6 |
+| Improve validity | ≥99% | Month 6 |
+| Reduce duplicate customer records | Below 2% | Month 6 |
+| Reduce manual booking corrections | At least 60% | Month 6 |
+
+These are proposed internal project targets, not mandatory numerical thresholds prescribed by SDAIA.
+
+## 5. Project Scope
+
+### 5.1. In Scope
+
+**The project focuses on the following data domains:**
+
+Customer Data
+
+- Customer ID.
+- Customer name.
+- Contact information.
+- Customer profile status.
+Booking Data
+
+- Booking reference.
+- Customer reference.
+- Booking date.
+- Travel dates.
+- Booking status.
+- Booking amount.
+Tourism Service Data
+
+- Hotel identifiers.
+- Destination codes.
+- Travel package identifiers.
+- Service availability.
+Financial Data
+
+- Payment references.
+- Payment status.
+- Transaction amounts.
+- Refund records.
+### 5.2. Out of Scope
+
+- Replacement of existing enterprise systems.
+- Redesign of the entire IT architecture.
+- Development of a new CRM platform.
+- Historical financial audit activities unrelated to data quality.
+- Changes to corporate business strategy.
+## 6. Data Quality Dimensions
+
+The project uses six data quality dimensions aligned with the terminology in SDAIA's data management guidance.
+
+### 6.1. Completeness
+
+Definition: The extent to which required data values are present.
+
+Tourism Example: Every confirmed booking must contain a valid booking reference, customer identifier, travel date, and required service details.
+
+**Measurement Formula:**
+
+Completeness (%) = (Number of records satisfying mandatory field requirements / Total applicable records) × 100
+
+Target: ≥99%
+
+**Improvement Actions:**
+
+- Identify mandatory fields.
+- Apply input validation.
+- Prevent confirmation of incomplete bookings.
+- Monitor missing values.
+### 6.2. Accuracy
+
+Definition: The extent to which data correctly represents the actual or authoritative value.
+
+Tourism Example: The booking amount must match the approved price, considering applicable discounts, fees, and taxes.
+
+**Measurement Formula:**
+
+Accuracy (%) = (Number of verified accurate values / Total values assessed) × 100
+
+Target: ≥98%
+
+**Improvement Actions:**
+
+- Validate records against authoritative sources.
+- Reconcile booking amounts.
+- Correct confirmed inaccuracies.
+- Introduce automated verification controls.
+### 6.3. Consistency
+
+Definition: The extent to which data remains logically compatible and aligned across systems and records.
+
+Tourism Example: The booking status in the Booking Management System must match the corresponding status in the ERP system, subject to approved synchronization rules.
+
+**Measurement Formula:**
+
+Consistency (%) = (Number of records passing consistency checks / Total records assessed) × 100
+
+Target: ≥98%
+
+**Improvement Actions:**
+
+- Standardize business definitions.
+- Establish reference data.
+- Improve system integration.
+- Implement automated reconciliation.
+### 6.4. Timeliness
+
+Definition: The extent to which data is available and updated within the timeframe required for business use.
+
+Tourism Example: Booking cancellations must be reflected in downstream operational systems within 15 minutes.
+
+**Measurement Formula:**
+
+Timeliness (%) = (Number of applicable updates completed within the agreed timeframe / Total applicable updates) × 100
+
+Target: ≥95%
+
+**Improvement Actions:**
+
+- Define data update service levels.
+- Monitor integration delays.
+- Configure alerts.
+- Automate critical updates.
+### 6.5. Uniqueness
+
+Definition: The extent to which data records are free from unintended duplication.
+
+Tourism Example: A customer should not have multiple active master profiles representing the same individual without a legitimate business reason.
+
+**Measurement Formula:**
+
+Uniqueness (%) = (Number of records assessed as non-duplicated / Total records assessed) × 100
+
+Target: ≥98%
+
+**Improvement Actions:**
+
+- Standardize identifying attributes.
+- Implement duplicate detection.
+- Apply matching algorithms.
+- Review potential duplicates before merging.
+### 6.6. Validity
+
+Definition: The extent to which data conforms to defined formats, allowable values, data types, and business rules.
+
+Tourism Example: Departure dates must follow an approved format and comply with applicable booking rules.
+
+**Measurement Formula:**
+
+Validity (%) = (Number of values passing validation rules / Total values assessed) × 100
+
+Target: ≥99%
+
+**Improvement Actions:**
+
+- Define accepted values.
+- Validate field formats.
+- Use controlled reference lists.
+- Reject invalid entries.
+## 7. Project Methodology
+
+The project follows a structured six-phase Data Quality Improvement Lifecycle.
+
+Phase 1: Data Discovery and Profiling
+
+Duration: Month 1
+
+**Activities:**
+
+- Identify data sources.
+- Review database structures.
+- Select Critical Data Elements.
+- Conduct data profiling.
+- Measure baseline quality.
+- Identify high-risk issues.
+**Deliverables:**
+
+- Data Source Inventory.
+- Critical Data Elements Register.
+- Data Profiling Report.
+- Baseline Data Quality Assessment.
+Phase 2: Data Quality Governance
+
+Duration: Month 2
+
+**Activities:**
+
+- Assign Data Owners.
+- Assign Data Stewards.
+- Establish quality rules.
+- Define performance thresholds.
+- Approve issue escalation procedures.
+- Develop a Data Quality Management Plan.
+**Deliverables:**
+
+- Data Quality Governance Framework.
+- Data Quality Rules Register.
+- Roles and Responsibilities Matrix.
+- Data Quality Issue Management Procedure.
+Phase 3: Data Cleansing and Remediation
+
+Duration: Month 3
+
+**Activities:**
+
+- Identify incomplete records.
+- Investigate inaccurate data.
+- Detect duplicate customer profiles.
+- Standardize reference data.
+- Correct verified errors.
+- Reconcile inconsistent records.
+**Deliverables:**
+
+- Data Cleansing Report.
+- Remediation Log.
+- Duplicate Resolution Register.
+- Root Cause Analysis Report.
+Phase 4: Preventive Control Implementation
+
+Duration: Month 4
+
+**Activities:**
+
+- Implement mandatory field validation.
+- Activate duplicate detection.
+- Configure automated quality checks.
+- Improve integration controls.
+- Establish error notifications.
+**Deliverables:**
+
+- Automated Validation Rules.
+- Duplicate Prevention Controls.
+- Integration Reconciliation Procedures.
+- Quality Control Test Results.
+Phase 5: Monitoring and Performance Measurement
+
+Duration: Month 5
+
+**Activities:**
+
+- Develop a Data Quality Dashboard.
+- Monitor dimension-level KPIs.
+- Track unresolved issues.
+- Measure compliance with thresholds.
+- Conduct weekly quality reviews.
+**Deliverables:**
+
+- Data Quality Dashboard.
+- Weekly Monitoring Reports.
+- Data Quality Scorecards.
+- Issue Resolution Reports.
+Phase 6: Evaluation and Sustainability
+
+Duration: Month 6
+
+**Activities:**
+
+- Reassess data quality.
+- Compare results against baseline.
+- Evaluate business impact.
+- Review unresolved quality issues.
+- Establish continuous monitoring procedures.
+- Submit final project findings.
+**Deliverables:**
+
+- Final Data Quality Assessment.
+- Project Performance Report.
+- Sustainability Plan.
+- Final Project Presentation.
+## 8. Critical Data Elements (CDEs)
+
+Critical Data Elements are data attributes that have a significant impact on business operations, regulatory obligations, or decision-making.
+
+**The project identifies the following CDEs:**
+
+Data Element        Business Importance             Data Owner
+
+Customer ID         Unique customer identification Customer Service
+
+Customer Contact Customer communication             Customer Service
+
+Booking Reference Reservation tracking              Reservations
+
+Booking Status      Operational processing          Reservations
+
+Travel Date         Service delivery                Operations
+
+Booking Amount      Financial accuracy              Finance
+
+Payment Status      Payment reconciliation          Finance
+
+Destination Code Service classification             Operations
+
+The Data Management Office coordinates quality controls, while business Data Owners remain accountable for their respective data domains.
+
+## 9. Data Quality Rules Register
+
+The following rules translate quality requirements into measurable controls.
+
+Rule Dimension      Business Rule                                      Target ID
+
+DQ-                    Confirmed bookings must contain all mandatory Completeness                                                 99% 001                    fields
+
+DQ-                    Booking amounts must match authorized pricing Accuracy                                                     98% 002                    records
+
+DQ-                    Booking statuses must match across relevant Consistency                                                       98% 003                    systems
+
+DQ-                    Booking updates must synchronize within 15 Timeliness                                                        95% 004                    minutes
+
+DQ- Uniqueness     Booking reference identifiers must be unique       100% 005
+
+DQ-                    Travel dates must comply with approved business Validity                                                       99% 006                    rules
+
+DQ-                    Duplicate customer master records must remain ≥98% Uniqueness 007                    below 2%                                      uniqueness
+
+Each rule must be documented with its business definition, applicable population, source system, execution frequency, responsible owner, exception-handling process, and calculation method.
+
+## 10. Practical Data Quality Assessment Example
+
+### 10.1. Sample Dataset
+
+The following sample records illustrate common data quality problems.
+
+| Booking ID | Customer ID | Travel Date | Amount (SAR) | Status |
+|---|---|---|---:|---|
+| BK1001 | C001 | 2026-10-15 | 1,500 | Confirmed |
+| BK1002 | C002 | Missing | 2,000 | Confirmed |
+| BK1003 | C003 | 2026-10-18 | 1,800 | Cancelled |
+| BK1003 | C003 | 2026-10-18 | 1,800 | Cancelled |
+| BK1005 | C005 | Invalid Date | 1,200 | Confirmed |
+
+### 10.2. Data Quality Findings
+
+Completeness Issue
+
+Booking BK1002 has a missing travel date.
+
+Uniqueness Issue
+
+Booking BK1003 appears twice.
+
+Validity Issue
+
+Booking BK1005 contains an invalid travel date.
+
+### 10.3. Sample Calculations
+
+Travel Date Completeness
+
+Total records = 5
+
+Records with populated travel dates = 4
+
+Completeness = (4 / 5) × 100 = 80%
+
+Booking Reference Uniqueness
+
+Total records = 5
+
+Records beyond the first occurrence of each booking reference = 1
+
+Uniqueness = (4 / 5) × 100 = 80%
+
+Travel Date Validity
+
+Records with valid travel date values = 3
+
+Validity = (3 / 5) × 100 = 60%
+
+For this example, a missing value fails both the required-field completeness rule and the travel-date validity rule. In production, the denominator and treatment of missing values must be explicitly defined for each rule.
+
+### 10.4. Corrective Actions
+
+- Investigate and populate the missing travel date using an authoritative booking
+source.
+
+- Review the duplicated booking reference and remove or reconcile the redundant
+record without losing legitimate transaction history.
+
+- Correct the invalid travel date after verification.
+- Introduce validation rules to prevent recurrence.
+This example demonstrates how data quality dimensions can be converted into measurable operational controls.
+
+## 11. Root Cause Analysis
+
+The project applies Root Cause Analysis to identify the underlying reasons for recurring data quality problems.
+
+Data Quality Root Cause                 Corrective Action      Preventive Control Issue
+
+Missing booking                                Complete verified      Mandatory field Optional input fields data                                           missing values         validation
+
+Duplicate           No matching                Review and merge Duplicate detection customers           mechanism                  verified duplicates
+
+Reconcile affected     Authorized pricing Incorrect prices    Multiple pricing sources transactions           reference
+
+Automated Inconsistent       Integration              Reconcile system integration statuses           synchronization failures records monitoring
+
+Invalid                                      Standardize existing     Controlled reference Free-text entry destination codes                            codes                    lists
+
+Refresh affected         Update monitoring Outdated records Delayed system updates records                  and alerts
+
+The project prioritizes preventive controls to reduce recurring issues and avoid repeated manual corrections.
+
+## 12. Data Quality Governance and Responsibilities
+
+Effective data quality management requires collaboration between business functions and technical teams.
+
+### 12.1. Governance Roles
+
+Executive Sponsor
+
+Provides strategic direction, approves major resources, and resolves escalated organizational issues.
+
+Data Management Office Director
+
+Leads the project, coordinates stakeholders, monitors performance, and reports progress to executive management.
+
+Data Owner
+
+Approves data definitions, quality requirements, thresholds, and business remediation decisions.
+
+Data Steward
+
+Monitors data quality, investigates exceptions, coordinates corrective actions, and maintains business data definitions.
+
+Data Quality Analyst
+
+Develops quality measurements, conducts profiling, analyzes trends, and prepares quality reports.
+
+IT Department
+
+Implements technical controls, maintains integrations, and supports automated quality monitoring.
+
+Personal Data Protection Officer / Privacy Function
+
+Advises on personal data processing, access restrictions, and compliance requirements.
+
+### 12.2. RACI Matrix
+
+R = Responsible A = Accountable C = Consulted I = Informed
+
+Activity                       DMO Data Owner Data Steward IT
+
+| Activity | DMO | Data Owner | Data Steward | IT |
+|---|:---:|:---:|:---:|:---:|
+| Define quality standards | R | A | C | C |
+| Approve business quality rules | C | A | R | C |
+| Conduct data profiling | A | C | R | R |
+| Investigate quality issues | C | A | R | C |
+| Implement technical controls | C | C | C | A/R |
+| Monitor quality performance | A | I | R | C |
+| Approve business remediation | C | A | R | C |
+
+The detailed RACI should be approved by the organization before implementation.
+
+## 13. Data Quality Monitoring Dashboard
+
+A Data Quality Dashboard is designed using Microsoft Power BI or an equivalent business intelligence platform.
+
+The dashboard provides visibility into data quality performance across business domains, systems, and quality dimensions.
+
+### 13.1. Proposed Dashboard Components
+
+Executive Overview
+
+- Overall Data Quality Score.
+- Number of Critical Data Elements.
+- Percentage of rules meeting thresholds.
+- Number of open critical issues.
+- Data Quality Trend.
+Dimension Performance
+
+- Completeness Score.
+- Accuracy Score.
+- Consistency Score.
+- Timeliness Score.
+- Uniqueness Score.
+- Validity Score.
+Issue Management
+
+- Open issues by severity.
+- Overdue remediation actions.
+- Average issue resolution time.
+- Root cause categories.
+Business Impact
+
+- Booking correction volume.
+- Customer complaints related to data errors.
+- Financial reconciliation exceptions.
+- Manual processing time.
+### 13.2. Composite Data Quality Score
+
+A weighted score can be calculated using approved business priorities.
+
+**For this case study, the following illustrative weights are proposed:**
+
+| Dimension | Weight |
+|---|---:|
+| Completeness | 20% |
+| Accuracy | 25% |
+| Consistency | 20% |
+| Timeliness | 15% |
+| Uniqueness | 10% |
+| Validity | 10% |
+| **Total** | **100%** |
+
+Formula:**
+
+Overall Data Quality Score = Σ (Dimension Score × Assigned Weight)
+
+**Using the hypothetical final results:**
+
+- Completeness: 99%
+- Accuracy: 97%
+- Consistency: 96%
+- Timeliness: 95%
+- Uniqueness: 98.5%
+- Validity: 99%
+Overall Score = (99 × 0.20) + (97 × 0.25) + (96 × 0.20) + (95 × 0.15) + (98.5 × 0.10) + (99 × 0.10)
+
+Overall Data Quality Score = 97.25%
+
+The composite score is an internal management indicator. It does not replace individual rule compliance, critical data quality thresholds, or applicable regulatory requirements.
+
+## 14. Project Results and Performance Evaluation
+
+At the end of the hypothetical six-month implementation period, the following results were achieved in the case study.
+
+Dimension      Baseline Final Result Target Status
+
+Completeness 78%         99%          99%    Achieved
+
+Accuracy       82%       97%          98%    Partially Achieved
+
+Consistency    72%       96%          98%    Partially Achieved
+
+Timeliness     75%       95%          95%    Achieved
+
+Uniqueness     89%       98.5%        98%    Achieved
+
+Validity       86%       99%          99%    Achieved
+
+### 14.1. Key Achievements
+
+Improved Data Completeness
+
+Mandatory booking information became more consistently available, reducing incomplete reservations.
+
+Reduced Duplicate Records
+
+The duplicate customer record rate decreased from 11% to 1.5%.
+
+Improved Data Consistency
+
+Booking and financial records became more consistent across integrated systems.
+
+Enhanced Operational Efficiency
+
+The number of monthly booking records requiring manual correction decreased by 70%.
+
+Improved Management Reporting
+
+More reliable source data reduced the need for manual reconciliation before management reporting.
+
+Established Governance Accountability
+
+Data Owners and Data Stewards were assigned responsibilities for quality monitoring and remediation.
+
+### 14.2. Remaining Gaps
+
+Although the overall results demonstrated significant improvement, two dimensions
+
+**remained below their approved targets:**
+
+- Accuracy: 97% against a 98% target.
+- Consistency: 96% against a 98% target.
+Additional actions were therefore recommended, including stronger pricing validation and improved system reconciliation controls.
+
+## 15. Business Impact Assessment
+
+The project evaluated business outcomes in addition to technical quality improvements.
+
+Business Indicator                           Before     After
+
+Monthly manual booking corrections           1,200      360
+
+Average correction time                      30 minutes 10 minutes
+
+Monthly data-related customer complaints 200            80
+
+Operational report preparation time          3 days     1 day
+
+These figures represent hypothetical project results.
+
+### 15.1. Operational Efficiency
+
+The reduction in manual booking corrections allows employees to focus on higher-value customer service and operational activities.
+
+### 15.2. Customer Experience
+
+More accurate customer and booking information reduces avoidable service disruptions and improves customer communication.
+
+### 15.3. Financial Reliability
+
+Improved pricing accuracy and booking consistency support more reliable financial reconciliation and reporting.
+
+### 15.4. Decision-Making
+
+Higher-quality operational data improves the reliability of business intelligence dashboards and management reports.
+
+## 16. Data Protection and Compliance Considerations
+
+The project incorporates privacy and information security requirements when processing customer data.
+
+Because the company operates in Saudi Arabia and processes personal information, the project considers the Saudi Personal Data Protection Law (PDPL) and applicable implementing regulations.
+
+**Key controls include:**
+
+1. Restricting access to personal data based on authorized business responsibilities.
+
+2. Applying data minimization principles.
+
+3. Using de-identified or pseudonymized data for testing when feasible.
+
+4. Maintaining audit trails for data corrections.
+
+5. Preventing unauthorized disclosure of customer information.
+
+6. Applying appropriate retention and disposal requirements.
+
+7. Reviewing privacy risks associated with data matching and merging.
+
+8. Ensuring that data quality activities have a legitimate processing purpose.
+
+Data quality improvement must not compromise personal data protection.
+
+The organization must also determine which SDAIA data management controls apply directly to its legal and operational context.
+
+## 17. Risk Management
+
+The project identifies and manages risks that could affect implementation.
+
+Potential Risk                                            Mitigation Impact
+
+Incorrect customer record High           Verified matching and manual review merging
+
+Limited stakeholder                             Executive sponsorship and assigned High participation                                   ownership
+
+Testing, monitoring, and rollback Integration failures             High procedures
+
+Insufficient data                               Metadata and business glossary Medium documentation                                   development
+
+Resistance to process Medium         Training and communication changes
+
+Unauthorized data access         High           Role-based access and audit controls
+
+Poor sustainability after                       Continuous monitoring and assigned High closure                                         responsibilities
+
+High-risk remediation activities require formal approval and documented evidence.
+
+## 18. Sustainability and Continuous Improvement
+
+Data quality is an ongoing management responsibility rather than a one-time cleansing exercise.
+
+**The following sustainability activities are recommended:**
+
+#### Daily
+
+- Execute automated critical data quality checks.
+- Monitor integration failures.
+- Generate alerts for high-severity exceptions.
+#### Weekly
+
+- Review unresolved issues.
+- Track remediation progress.
+- Analyze recurring quality failures.
+#### Monthly
+
+- Review dimension-level KPIs.
+- Report performance to Data Owners.
+- Update the Data Quality Issue Register.
+#### Quarterly
+
+- Review quality thresholds.
+- Reassess Critical Data Elements.
+- Evaluate root causes and preventive controls.
+- Present performance trends to the Data Governance Committee.
+#### Annually
+
+- Review the Data Quality Management Framework.
+- Assess data quality maturity.
+- Update standards, controls, and improvement priorities.
+## 19. Lessons Learned
+
+The case study highlights several important lessons.
+
+1. Data quality requires business ownership.
+
+Technology teams can implement controls, but business departments must define acceptable data quality requirements.
+
+2. Data profiling should precede remediation.
+
+Understanding the nature and extent of quality problems is essential before selecting corrective actions.
+
+3. Root cause analysis is more valuable than repeated correction.
+
+Preventing errors at their source reduces operational costs and improves long-term quality.
+
+## 4. Critical Data Elements should receive priority.
+
+Not all data requires the same level of monitoring or investment.
+
+5. Automation improves consistency and sustainability.
+
+Automated validation and monitoring reduce dependence on manual inspection.
+
+6. Data quality must be linked to business outcomes.
+
+The value of data quality improvement should be demonstrated through measurable operational, financial, and customer-related benefits.
+
+## 20. Recommendations
+
+**Based on the project findings, the following recommendations are proposed:**
+
+1. Establish a permanent Data Quality Management function within the Data
+
+Management Office.
+
+2. Maintain an approved register of Critical Data Elements and quality rules.
+
+3. Integrate data quality checks into operational systems.
+
+4. Strengthen master and reference data management.
+
+5. Implement automated data reconciliation between critical systems.
+
+6. Provide regular training for Data Owners and Data Stewards.
+
+7. Review data quality performance through executive dashboards.
+
+8. Prioritize unresolved accuracy and consistency gaps.
+
+9. Incorporate data quality requirements into new digital initiatives.
+
+10. Conduct periodic data quality maturity assessments.
+
+## 21. Conclusion
+
+This project demonstrates how a Saudi tourism company can systematically improve the quality of its operational data through a structured approach aligned with SDAIA's National Data Management Standards.
+
+By applying six core data quality dimensions, establishing governance responsibilities, implementing measurable quality rules, and introducing automated monitoring, the organization can improve the reliability and usability of its data assets.
+
+The hypothetical case study illustrates improvements in data completeness, accuracy, consistency, timeliness, uniqueness, and validity, while also demonstrating positive operational outcomes.
+
+Although certain quality targets remain partially unmet, the project provides a sustainable foundation for continuous improvement.
+
+Ultimately, effective Data Quality Management supports better customer experiences, more reliable business reporting, improved operational efficiency, and stronger data-driven decision-making.
+
+The key conclusion is that data quality should be managed as an enterprise-wide business capability, supported by governance, accountability, measurable controls, and continuous improvement.
+
+## 22. References
+
+Saudi Data and Artificial Intelligence Authority (SDAIA). National Data Management Standards and Controls.
+
+<https://sdaia.gov.sa/ar/SDAIA/about/Documents/Policies001.pdf>
+
+Saudi Data and Artificial Intelligence Authority (SDAIA). National Data Governance Platform.
+
+<https://dgp.sdaia.gov.sa/>
+
+Saudi Data and Artificial Intelligence Authority (SDAIA). Personal Data Protection Law and Implementing Regulations.
+
+<https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/PDPL2>
+
+DAMA International. DAMA-DMBOK: Data Management Body of Knowledge, Second Edition. Technics
+
+Publications, 2017.
+
+<https://www.dama.org/>
+
+International Organization for Standardization (ISO). ISO 8000 — Data Quality Standards.
+
+<https://www.iso.org/>
+
+---
+
+*End of project report.*
+
+<https://sdaia.gov.sa/ar/Sectors/BuildingCapacity/academy/Pages/default.aspx>
